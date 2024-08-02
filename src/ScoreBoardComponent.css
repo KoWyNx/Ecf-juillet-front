@@ -11,6 +11,15 @@
 
 .score-board-score {
     font-size: 2rem;
-    font-weight: bold;
     color: #4CAF50;
+    animation: shine 1s ease-in-out infinite;
+}
+
+@keyframes shine {
+    from {
+        text-shadow: 0 0 5px #4CAF50, 0 0 10px #4CAF50;
+    }
+    to {
+        text-shadow: 0 0 15px #4CAF50, 0 0 30px #4CAF50;
+    }
 }

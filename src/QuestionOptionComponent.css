@@ -1,21 +1,21 @@
 .option-button {
+    display: block;
+    margin: 10px auto;
     padding: 10px 20px;
-    margin: 5px;
     border: none;
     border-radius: 4px;
     color: white;
+    background-color: #2196F3;
     cursor: pointer;
-    background-color: #4CAF50;
-    transition: background-color 0.3s ease;
-    font-size: 1rem;
-    text-align: center;
+    transition: background-color 0.3s ease, transform 0.2s ease;
 }
 
 .option-button:hover {
-    background-color: #45a049;
+    background-color: #1e88e5;
+    transform: scale(1.05);
 }
 
-.option-button:focus {
-    outline: none;
-    box-shadow: 0 0 0 2px rgba(0, 0, 0, 0.2);
+.option-button:active {
+    background-color: #1976d2;
+    transform: scale(0.95);
 }
