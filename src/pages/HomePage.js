@@ -3,6 +3,7 @@ import { useNavigate } from 'react-router-dom';
 import { getAllQuestions, submitPlayerScore } from '../api';
 import QuestionComponent from '../components/QuestionComponent';
 import ScoreBoardComponent from '../components/ScoreBoardComponent';
+import '../HomePage.css'; 
 
 const HomePage = () => {
     const [questions, setQuestions] = useState([]); 
@@ -22,7 +23,6 @@ const HomePage = () => {
                 console.log('Questions fetched:', questionsData);
                 setQuestions(questionsData);
 
-    
                 if (questionsData.length > 0) {
                     setCurrentQuestionIndex(0);
                 }
@@ -47,7 +47,6 @@ const HomePage = () => {
             if (correct) {
                 setScore(score + 1);
             }
-
 
             const nextIndex = currentQuestionIndex + 1;
             if (nextIndex < questions.length) {
@@ -93,10 +92,10 @@ const HomePage = () => {
     };
 
     return (
-        <div>
+        <div className="home-container">
             {quizEnded ? (
                 <>
-                    <h1>Quiz terminé !</h1>
+                    <h1 className="home-title">Quiz terminé !</h1>
                     <ScoreBoardComponent score={score} />
                     <div>
                         <input
@@ -104,9 +103,15 @@ const HomePage = () => {
                             placeholder="Enter your name"
                             value={userName}
                             onChange={handleNameChange}
+                            className="home-input"
                         />
-                        <button onClick={handleSubmitScore}>Submit Score</button>
-                        {error && <p style={{ color: 'red' }}>{error}</p>}
+                        <button
+                            onClick={handleSubmitScore}
+                            className="home-button home-submit-button"
+                        >
+                            Submit Score
+                        </button>
+                        {error && <p className="home-error">{error}</p>}
                     </div>
                 </>
             ) : (
@@ -117,11 +122,16 @@ const HomePage = () => {
                             <QuestionComponent question={currentQuestion} onAnswer={handleAnswerClick} />
                         </>
                     ) : (
-                        <p>Loading question...</p>
+                        <p className="home-loading">Loading question...</p>
                     )}
                 </>
             )}
-            <button onClick={handleViewPlayerScores}>Voir la Liste des Joueurs</button>
+            <button
+                onClick={handleViewPlayerScores}
+                className="home-button home-view-scores-button"
+            >
+                Voir la Liste des Joueurs
+            </button>
         </div>
     );
 };

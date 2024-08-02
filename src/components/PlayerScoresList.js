@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import { getPlayerScores } from '../api'; 
+import '../PlayerScoresList.css'; 
 
 const PlayerScoresList = () => {
     const [playerScores, setPlayerScores] = useState([]);
@@ -25,13 +26,13 @@ const PlayerScoresList = () => {
     }, []);
 
     if (error) {
-        return <div>{error}</div>;
+        return <div className="player-scores-error">{error}</div>; 
     }
 
     return (
-        <div>
-            <h1>Liste des Joueurs et Scores</h1>
-            <table>
+        <div className="player-scores-container"> 
+            <h1 className="player-scores-title">Liste des Joueurs et Scores</h1>
+            <table className="player-scores-table"> 
                 <thead>
                     <tr>
                         <th>Nom du Joueur</th>

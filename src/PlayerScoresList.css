@@ -1,0 +1,43 @@
+.player-scores-container {
+    padding: 20px;
+    text-align: center;
+    font-family: Arial, sans-serif;
+}
+
+.player-scores-title {
+    font-size: 2rem;
+    color: #333;
+    margin-bottom: 20px;
+}
+
+.player-scores-table {
+    width: 100%;
+    border-collapse: collapse;
+    margin: 0 auto;
+    max-width: 800px;
+}
+
+.player-scores-table th, .player-scores-table td {
+    padding: 10px;
+    border: 1px solid #ddd;
+    text-align: left;
+}
+
+.player-scores-table th {
+    background-color: #4CAF50;
+    color: white;
+}
+
+.player-scores-table tr:nth-child(even) {
+    background-color: #f2f2f2;
+}
+
+.player-scores-table tr:hover {
+    background-color: #ddd;
+}
+
+.player-scores-error {
+    color: red;
+    font-size: 1.2rem;
+    margin-top: 20px;
+}
